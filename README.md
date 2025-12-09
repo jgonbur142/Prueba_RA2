@@ -4,6 +4,8 @@
 ### **1A**
 No se ve centrado porque el único elemento que hay es el `h1` y el contenedor no es más alto que este, y como tampoco hay varios elementos, simplemente no hay espacio donde moverlo.
 
+---
+
 ### **1B**
 Una forma sencilla de solucionarlo es simplemente añadir `flex-direction: column;` en el CSS, de forma que quedaría así:
 ```css
@@ -34,6 +36,7 @@ h1 {
 
 El resultado para ambas soluciones es el `h1` centrado en la cabecera de la página web.
 
+---
 
 ### **1C**
 Para hacer que el menú de navegación también quede centrado horizontalmente, le añado un `flex` y un `margin-top`, para respetar la distancia de 30px,
@@ -56,6 +59,7 @@ h1 {
   align-items: center;
 }
 ```
+---
 
 ### **1D**
 Para conseguir un aspecto más definido y que se diferencie del resto de la página, simplemente añado a la etiqueta `.site-header` un color de fondo con 
@@ -84,11 +88,12 @@ h1 {
 }
 
 ```
+---
 
 ## **Ejercicio 2**
 
 ### **2A**
-Muevo el botón hambuergesa del menú al header:
+Muevo el botón hamburguesa del menú al header:
 ```html
 <header class="site-header">
     <h1>Nintendo DS y el cambio generacional</h1>
@@ -109,6 +114,7 @@ Muevo el botón hambuergesa del menú al header:
      
   </header>
 ```
+---
 
 ### **2B**
 Para hacer que el botón, el `h1` y el `nav` queden centrados, modifico en mi CSS la etiqueta `.site-header` cambiando los valores `flex-direction` y 
@@ -135,6 +141,8 @@ El único problema que surge ahora es que el botón queda escondido una vez puls
 ## **Ejercicio 3**
 En el caso de mi página, ya tengo imágenes más pequeñas en la galería que sirven como previsualización.
 
+---
+
 ### **3A / 3B**
 En mi CSS, cuando paso el ratón por encima la miniatura se hace más grande y lo he hecho de la siguiente forma:
 ```css
@@ -148,6 +156,8 @@ En mi CSS, cuando paso el ratón por encima la miniatura se hace más grande y l
 }
 ```
 Lo que hago es establecer un `border-radius`, un `width` y un `box-shadow` a la imgagen y luego cuando paso el ratón por encima, hago que se escale la imagen.
+
+---
 
 ### **3C**
 Para hacer que se abra en otra petaña al hacer clic, en el HTML lo que he hecho ha sido añadir un `<a href>` con la dirección de la propia imagen, dentro de cada `<figure>`. 
@@ -204,18 +214,35 @@ El resultado es el siguiente:
         </figure>
     </section>
 ```
+---
 
 ## **Ejercicio 4**
 
-### **4.1**
+### **4.1 / Tema, contenido e idea**
+El tema que escogí para hacer mi página web ha sido la consola retro Nintendo DS. He incluido datos técnicos, contenidos breves sobre su historia y evolución, catálogo, ..., pero sobre todo hablo acerca de la revolución que significó en el mercado. Mi idea para diseñar esta página era crear una página web de aspecto moderno y agradable, que sierviera como un vistazo hacia atrás con respecto a consolas más modernas y con el objetivo de ser una web interesante y entretenida de leer, que alguien con gustos o intereses similares a los míos disfrutaría.
+
+---
 
 ### **4.2**
+<img width="574" height="356" alt="image" src="https://github.com/user-attachments/assets/7cfdb1be-85f8-4acc-a510-80eb16be56ec" />
+
+Incluyo en el `header` todo lo que es la cabecera de la web. El título y el menú `nav`, que sirve como índice para navegar por toda la web a través de los enlaces.
+
+---
 
 ### **4.3**
 
+---
+
 ### **4.4**
+
+---
 
 ### **4.5**
 
+---
+
 ### **4.6**
+
+---
 
