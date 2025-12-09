@@ -1,0 +1,454 @@
+/* ===== RESET CSS básico ===== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ===== FUENTE LOCAL ===== */
+@font-face {
+  font-family: "LatoLocal";
+  src: url(/fonts/Lato-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoLocal";
+  src: url(/fonts/Lato-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LatoLocal";
+  src: url(/fonts/Lato-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ===== ESTILOS BASE ===== */
+body {
+  font-family: "Lato","Merriweather", sans-serif;
+  background: lightgrey;
+}
+
+/* TODO: Alinear el contenido de main, poner colores de fondo, etc. */
+main {
+  font-family: "LatoLocal","Lato",sans-serif;
+  width: min(1100px, 90%);
+  margin: 20px auto;
+}
+
+/* ===== CABECERA Y MENÚ SUPERIOR ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  /* TODO: Añade color de fondo, color de texto, padding, etc. */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: rgba(50, 50, 50, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 0.8em 2em;
+  border-radius: 0 0 20px 20px;
+  margin: 0 4em;
+  transition: transform 0.3s ease;
+}
+
+.site-header.hide { /* he investigado como hacer para que desaparezca la barra nav si voy hacia abajo, y vuelva a aparecer si voy hacia arriba*/
+  transform: translateY(-100%);
+}
+
+.site-header h1 {
+  /* TODO: Estilo del título (tamaño, margen, etc.) */
+  font-size: 2.2em;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.main-nav a {
+  /* TODO: Estilo de enlaces del menú superior (color, padding, :hover, etc.) */
+  margin: 3px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.95em;
+  font-weight: 600;
+  padding: .45em .9em;
+  border-radius: 12px;
+  
+}
+
+.main-nav a:hover {
+  background-color: #454545;
+  color: lightgrey;
+}
+
+/* ===== BOTÓN HAMBURGUESA PARA GESTIONAR EL MENÚ LATERAL ===== */
+.open-menu {
+  position: fixed;
+  top: .25em;
+  left: .5em;
+  z-index: 20;
+  font-size: 30px;
+  /* TODO: Colores, borde, padding, etc. */
+  background-color: white;
+  border: none;
+  padding: .2em .3em;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* Efecto visual cuando el menú está abierto */
+.open-menu.active {
+  transform: rotate(90deg);
+  background: #454545;
+  color: white;
+  /* TODO: Cambia color de fondo, rota un poco el icono, etc. */
+}
+
+/* ===== MENÚ LATERAL DESLIZANTE ===== */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -230px;            /* oculto inicialmente */
+  width: 230px;
+  height: 100%;
+  /* TODO: color de fondo, color de texto… */
+  background: grey;
+  padding-top: 60px;
+  box-shadow: 5px 0 12px rgba(0, 0, 0, 0.4);
+  transition: left 0.3s ease;
+  z-index: 15;
+}
+
+.side-menu.active {
+  left: 0;                 /* aparece cuando tiene la clase "active" */
+}
+
+.side-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  /* TODO: color de texto, quitar subrayado, etc. */
+}
+
+/* TODO: Añade :hover para los enlaces del menú lateral */
+.side-menu a:hover {
+  background: white;
+  color: grey;
+
+}
+
+/* ===== ESTILO DE LAS SECCIONES ===== */
+section { 
+  background: white;
+  padding: 2em;
+  margin: 2em 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #2a2a75;
+  margin-bottom: .8em;
+  font-size: 1.8em;
+}
+
+#hero figure {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0;
+}
+
+section img, section iframe, section video {
+  display: block;
+  margin: 1em auto;
+  max-width: 70%;
+  border-radius: 8px;
+}
+
+section figcaption {
+  text-align: center;
+  margin-top: .5em;
+  font-weight: bold;
+  color: #2a2a75;
+  font-size: 1em;
+}
+
+/* ===== GALERIA ===== */
+#gallery {
+  text-align: center;
+}
+
+#gallery figure {
+  display: inline-block;
+  margin: 1em;
+}
+
+#gallery img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+#gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== TABLA ===== */
+table { /* estilo de la tabla y sus celdas*/
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  font-size: 1em;
+  background: lightgrey;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+thead {
+  background: #000040;
+  color: white;
+}
+
+th, td{
+  border: 1px solid black;
+  padding: .5em;
+}
+
+th {
+  text-align: center;
+}
+
+/* ===== IMAGENES MODELOS DS ===== */
+#modelos {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  justify-content: center;
+  padding: 1em;
+}
+
+#modelos figure {
+  background: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+#modelos a {
+  text-decoration: none;
+}
+
+#modelos figure:hover {
+  transform: scale(1.05);
+}
+
+#modelos img {
+  width: 80%;
+  max-width: 170px;
+  border-radius: 6px;
+}
+
+#modelos figcaption {
+  margin-top: 0.7em;
+  font-weight: bold;
+  color: #2a2a75;
+  font-size: 1em;
+}
+
+
+/* ===== FORMULARIO ===== */
+#form { /*estilo del formulario*/
+  padding: 1.5em 1em;
+  border-radius: 10px;
+  margin-top: 1em;
+}
+
+#form h2 { /* estilo del titulo del formulario*/
+  font-size: 1.5em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
+#form p { /* estilo del texto justo debajo del titulo*/
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.formulario { /* estilo del contenedor del formulario*/
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.formulario label { /* estilo de los label en el formulario*/
+  font-weight: bold;
+  color: #000040;
+}
+
+.formulario input { /* estilo de los campos de texto en el formulario*/
+  padding: 0.2em;
+  border: 1px solid #000040;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.formulario button { /* estilo del boton de suscribirse*/
+  padding: .5em;
+  border: none;
+  background-color: #000040;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario button:hover{
+  background-color: lightblue;
+  
+}
+.formulario button:active { /* animacion que al pulsar el boton suscribirse, se hace un poco más pequeño*/
+  transform: scale(0.9);
+}
+
+/* ===== SECCION CONTACTO ===== */
+#contact {
+  background: white;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#contact h2 {
+  color: #2a2a75;
+  font-size: 1.8em;
+  margin-bottom: .8em;
+}
+
+#contact p {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.contact-links figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-links figcaption {
+  margin-top: -.7em;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.contact-links a{
+  text-decoration: none;
+  background: #000040;
+  padding: 0.8em 1em;
+  color: white;
+  border-radius: 7px;
+  width: 160px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .4em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-links a:hover {
+  background: #2a2a75;
+  transform: scale(1.05);
+}
+
+.contact-links img {
+  width: 30px;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.site-footer {
+  /* TODO: estilo del footer (color de fondo, texto centrado, padding…) */
+  background: #000040;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 2px solid black;
+}
+
+.site-footer a {
+  /* TODO: estilo del enlace del footer y :visited si lo deseas */
+  color: white;
+  text-decoration: none;
+  font-size: .8em;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer a:hover {
+  opacity: 0.7;
+}
+
+/* he investigado como hacerlo responsivo para pantallas verticales */
+@media (max-width:900px){ /* para pantallas de hasta 900px*/
+
+  .site-header {
+    margin: 0 1.5em;
+    padding: 0.6em 1.4em;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+    font-size: 1.5em;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .site-header {
+    font-size: 1.5em;
+  }
+
+}
+
+@media (max-width:500px) { /*para moviles algo mas pequeños */
+
+  .open-menu { /* el menú en móvil tapaba el título de la página, asi que he movido el top*/
+    top: 2em;
+  }
+
+  .side-menu {
+    padding-top: 7.5em;
+  }
+}
